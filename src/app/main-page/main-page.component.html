@@ -1,3 +1,4 @@
-<p>
-  main-page works!
-</p>
+<form (ngSubmit)="getStop(value)">
+  <input type="text" (input)="getValue(value)" #value>
+  <button type="submit" [disabled]="inputValue === ''">Submit</button>
+</form>
