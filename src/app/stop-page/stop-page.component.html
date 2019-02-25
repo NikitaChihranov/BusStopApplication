@@ -1,0 +1,9 @@
+<div *ngFor="let stopInfo of stopInfoArray">
+  <div *ngFor="let eachStopSchedule of stopInfo.stopSchedules">
+    {{stopInfo.stopName}}
+    <br>
+    {{eachStopSchedule.lineName}}
+    <br>
+    {{eachStopSchedule.departureTime}}
+  </div>
+</div>

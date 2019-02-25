@@ -6,11 +6,13 @@ import { MainPageComponent } from './main-page/main-page.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { StopPageComponent } from './stop-page/stop-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponent
+    MainPageComponent,
+    StopPageComponent
   ],
   imports: [
     BrowserModule,
