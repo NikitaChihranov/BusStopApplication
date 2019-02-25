@@ -14,12 +14,8 @@ export class StopService{
   }
 
   getStopInfo(stopId): Observable<any> {
-    try {
       const headers = new HttpHeaders();
       headers.append('Access-Control-Allow-Origin', '*');
       return this.http.get<any>(` https://cors-anywhere.herokuapp.com/https://myttc.ca/${stopId}.json`, {headers: headers});
-    }catch(e){
-      console.log(e);
-    }
     }
 }

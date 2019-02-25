@@ -5,7 +5,7 @@ import {Stop} from '../../models/Stop';
 import {StopSchedule} from '../../models/StopSchedule';
 import {StopInfo} from '../../models/StopInfo';
 import {StopService} from '../../services/stop.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-stop-page',
@@ -18,6 +18,7 @@ export class StopPageComponent implements OnInit {
 
   constructor(
     private stopService: StopService,
+    private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
   }
@@ -26,7 +27,7 @@ export class StopPageComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe((response) => {
       this.stopId = JSON.parse(response.stop_id);
       this.stopService.getStopInfo(this.stopId).subscribe((res) => {
-        try {
+
           this.stopInfoArray = [];
           let stops = [];
           for (let stop of res.stops) {
@@ -67,12 +68,10 @@ export class StopPageComponent implements OnInit {
             });
             console.log(this.stopInfoArray);
           }
-        } catch (e) {
-            console.log(e);
-        }
+
+      }, (err) =>{
+        this.router.navigate(['/notFound']).then();
       });
-
     });
-
   }
 }
