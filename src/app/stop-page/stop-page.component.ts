@@ -58,7 +58,6 @@ export class StopPageComponent implements OnInit {
             this.stopInfoArray.push(newStopInfo);
           }
           for (const stopInfo of this.stopInfoArray) {
-            console.log(1);
             stopInfo.stopSchedules.sort((a, b) => {
               if (a.departureTime > b.departureTime) {
                 return 1;
@@ -66,10 +65,9 @@ export class StopPageComponent implements OnInit {
                 return -1;
               }
             });
-            console.log(this.stopInfoArray);
           }
 
-      }, (err) =>{
+      }, (err) => {
         this.router.navigate(['/notFound']).then();
       });
     });
