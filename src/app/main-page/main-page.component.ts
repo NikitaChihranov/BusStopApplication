@@ -16,7 +16,6 @@ export class MainPageComponent implements OnInit {
   generalName = '';
   stopInfoArray: StopInfo[] = [];
 
-
   constructor(
     private stopService: StopService
   ) {
@@ -27,7 +26,7 @@ export class MainPageComponent implements OnInit {
 
   getStop(input) {
     this.stopService.getStopInfo(input.value).subscribe((res) => {
-      console.log(res);
+      this.stopInfoArray = [];
       let stops = [];
       this.generalName = res.name;
       for (let stop of res.stops) {
@@ -46,17 +45,26 @@ export class MainPageComponent implements OnInit {
         let Stop1 = new Stop(stop.name, routes);
         stops.push(Stop1);
       }
-      console.log(stops);
       for (let stop of stops) {
         let stopSchedules = [];
         for (let route of stop.routes) {
           for (let eachStop of route.stop_times) {
-            let stopTime = new StopSchedule(route.name, eachStop.departure_timestamp);
+            let stopTime = new StopSchedule(route.name, eachStop.departure_time);
             stopSchedules.push(stopTime);
           }
         }
         let newStopInfo = new StopInfo(stop.name, stopSchedules);
         this.stopInfoArray.push(newStopInfo);
+      }
+      for (const stopInfo of this.stopInfoArray) {
+        console.log(1);
+        stopInfo.stopSchedules.sort((a, b) => {
+          if (a.departureTime > b.departureTime) {
+            return 1;
+          } else if (a.departureTime < b.departureTime) {
+            return -1;
+          }
+        });
       }
       console.log(this.stopInfoArray);
     });
