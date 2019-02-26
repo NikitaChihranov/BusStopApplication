@@ -1,0 +1,22 @@
+.backButton{
+  margin-top: 0.8em;
+  background-color: #930318;
+  color: whitesmoke;
+}
+.mat-h3{
+  text-align:left;
+}
+.mat-h4{
+  text-align:right;
+}
+.tab{
+  width:50%;
+  margin:auto;
+}
+.lineName{
+  text-align:left;
+}
+.departure{
+  text-align:right;
+}
+

@@ -1,0 +1,11 @@
+h1{
+  text-align:center;
+  font-weight: bold;
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+.backButton{
+  margin-top: 0.8em;
+  background-color: #930318;
+  color: whitesmoke;
+}

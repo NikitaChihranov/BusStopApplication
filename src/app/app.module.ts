@@ -11,8 +11,8 @@ import {HttpErrorInterceptor} from '../services/http-error.interceptor';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MatButtonModule,
-  MatInputModule,
+  MatButtonModule, MatGridListModule,
+  MatInputModule, MatListModule, MatTabGroup, MatTableModule, MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
 
@@ -32,7 +32,9 @@ import {
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatListModule,
+    MatTabsModule
   ],
   providers: [
   {

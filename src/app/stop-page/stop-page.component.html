@@ -1,9 +1,20 @@
+<button mat-button class="backButton" routerLink="/">Back to main page</button>
 <div *ngFor="let stopInfo of stopInfoArray">
-  <div *ngFor="let eachStopSchedule of stopInfo.stopSchedules">
-    {{stopInfo.stopName}}
-    <br>
-    {{eachStopSchedule.lineName}}
-    <br>
-    {{eachStopSchedule.departureTime}}
-  </div>
+  <mat-tab-group class="tab" *ngIf="stopInfo.stopSchedules.length!=0">
+    <mat-tab label="Stop Name">
+      <h2 class="mat-h2">{{stopInfo.stopName}}</h2>
+    </mat-tab>
+    <mat-tab label="Stop Schedules">
+      <div *ngFor="let eachStopSchedule of stopInfo.stopSchedules">
+        <div class="lineName">
+          <span class="mat-h2">{{eachStopSchedule.lineName}}</span>
+        </div>
+        <div class="departure">
+          <span class="mat-h4">{{eachStopSchedule.departureTime}}</span>
+        </div>
+        <hr>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
 </div>
+

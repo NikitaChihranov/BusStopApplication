@@ -66,7 +66,7 @@ export class StopPageComponent implements OnInit {
               }
             });
           }
-
+          console.log(this.stopInfoArray);
       }, (err) => {
         this.router.navigate(['/notFound']).then();
       });

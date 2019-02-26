@@ -4,9 +4,11 @@
   margin-top:1em;
 }
 .stationForm{
-  margin-top:2em;
+  margin-top:5em;
   text-align:center;
 }
 .mainButton{
+  background-color: #930318;
+  color: whitesmoke;
   margin-left: 7px;
 }
