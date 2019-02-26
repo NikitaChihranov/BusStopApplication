@@ -10,7 +10,11 @@ import { StopPageComponent } from './stop-page/stop-page.component';
 import {HttpErrorInterceptor} from '../services/http-error.interceptor';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatFormFieldModule, MatInput, MatInputModule, MatSelectModule, MatTextareaAutosize} from '@angular/material';
+import {
+  MatButtonModule,
+  MatInputModule,
+  MatToolbarModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,7 @@ import {MatButtonModule, MatFormFieldModule, MatInput, MatInputModule, MatSelect
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
+    MatToolbarModule
   ],
   providers: [
   {

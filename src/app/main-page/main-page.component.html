@@ -1,19 +1,6 @@
-<form (ngSubmit)="getStop(value)">
-  <mat-label >Name of station</mat-label>
-  <br>
-<mat-form-field  class="example-full-width">
-  <input matInput type="text" (input)="getValue(value)" #value>
+<form class="stationForm" (ngSubmit)="getStop(value)">
+<mat-form-field>
+  <input matInput placeholder="Name" type="text" (input)="getValue(value)" #value>
 </mat-form-field>
-  <button mat-flat-button color="primary" type="submit" >Submit</button>
+  <button class="mainButton" mat-flat-button [disabled]="inputValue===''" color="primary" type="submit" >Submit</button>
 </form>
-
-<!--&lt;!&ndash;[disabled]="inputValue === ''"&ndash;&gt;-->
-<!--<form class="example-form">-->
-  <!--<mat-form-field class="example-full-width">-->
-    <!--<input matInput placeholder="Favorite food" value="Sushi">-->
-  <!--</mat-form-field>n-->
-
-  <!--<mat-form-field class="example-full-width">-->
-    <!--<textarea matInput placeholder="Leave a comment"></textarea>-->
-  <!--</mat-form-field>-->
-<!--</form>-->
