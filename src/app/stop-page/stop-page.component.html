@@ -1,4 +1,4 @@
-<button mat-button class="backButton" routerLink="/">Back to main page</button>
+<a routerLink="/"><img class="backButton" src="../../assets/back.png"></a>
 <div *ngFor="let stopInfo of stopInfoArray">
   <mat-tab-group class="tab" *ngIf="stopInfo.stopSchedules.length!=0">
     <mat-tab label="Stop Name">

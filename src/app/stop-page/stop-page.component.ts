@@ -27,7 +27,7 @@ export class StopPageComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe((response) => {
       this.stopId = JSON.parse(response.stop_id);
       this.stopService.getStopInfo(this.stopId).subscribe((res) => {
-
+          console.log(res);
           this.stopInfoArray = [];
           let stops = [];
           for (let stop of res.stops) {

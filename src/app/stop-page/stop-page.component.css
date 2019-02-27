@@ -1,7 +1,8 @@
 .backButton{
   margin-top: 0.8em;
-  background-color: #930318;
-  color: whitesmoke;
+  margin-left: 0.5em;
+  width: 50px;
+  height: 50px;
 }
 .mat-h3{
   text-align:left;
@@ -18,5 +19,8 @@
 }
 .departure{
   text-align:right;
+}
+*::-webkit-scrollbar{
+  position: absolute;
 }
 
