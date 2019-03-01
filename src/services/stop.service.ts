@@ -18,6 +18,7 @@ export class StopService {
   }
 
   static handleStopRes(stopRes: StopResponse): Observable<StopInfo[]> {
+    console.log(stopRes);
      const stopInfoArray = [];
      const stops = [];
     for ( const stop of stopRes.stops) {
@@ -43,15 +44,18 @@ export class StopService {
           let date = new Date();
           let time = eachStop.departure_time.split(':');
           let minutes = time[1].split('');
-          minutes.splice(time[1].length, 1);
-          time[1] = minutes;
-          console.log(time);
-          let pa = eachStop.departure_time.split('');
-          let dayTime = pa[pa.length];
+           let dayTime = minutes.splice(minutes.length-1, 1);
+           console.log(minutes);
+           let minutesToDefine = '';
+           for(let symbol of minutes){
+             minutesToDefine = minutesToDefine +symbol;
+           }
+           date.setMinutes(Number(minutesToDefine));
+          if(dayTime[0] === 'p'){
+            time[0] = Number(time[0])+12;
+          }
           date.setHours(time[0]);
-          date.setMinutes(time[1]);
-          console.log(date);
-          const stopTime = new StopSchedule(route.name, eachStop.departure_time);
+          const stopTime = new StopSchedule(route.name, date);
           stopSchedules.push(stopTime);
         }
       }
